@@ -5,7 +5,7 @@
                 <div class="row">
                     <!-- Image -->
                     <div class="col-sm-6">
-                        <p class="text-center"><img src="{{asset('/uploads/service_photos/'.$service->services_photo)}}" alt="Photo"
+                        <p class="text-center"><img src="{{asset('/uploads/service_photos/'.$service->services_photo)}}" width="100%" alt="Photo"
                                 class="img-fluid"></p> 
                         <div class="visible-xs-block visible-sm-block pt20"></div>
                     </div> 

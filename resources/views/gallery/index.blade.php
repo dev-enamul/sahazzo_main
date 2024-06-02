@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Clients
+                    Gallery
                 </div>
                 <div class="card-body table-responsive">
                     @if (session('editstatus'))
@@ -24,30 +24,31 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    @endif
+                    @endif 
+
                     <table class="table table-bordered table-hover" id="slider_table">
                         <thead>
                             <tr>
                                 <th>SL No</th>
-                                <th>Client Name</th>
-                                <th>Link</th>
+                                <th>Project</th>
+                                <th>Title</th>
                                 <th>Photo</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($clients as $client)
+                            @forelse ($galleries as $gallery)
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
-                                <td>{{ $client->name }}</td>
-                                <td>{{ $client->weblink }}</td>
+                                <td>{{ $gallery->project->title }}</td>
+                                <td>{{ $gallery->title }}</td>
                                 <td>
-                                    <img width="80" height="60" src="{{ asset('uploads/client_photos') }}/{{ $client->clients_photo }}" alt="not found">
+                                    <img width="80" height="60" src="{{ asset('uploads/gallery_photos') }}/{{ $client->gallery_photo }}" alt="not found">
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('admin/client/edit') }}/{{ $client->id }}" type="button" class="btn btn-primary">Edit</a>
-                                        <a href="{{ url('admin/client/delete') }}/{{ $client->id }}" type="button" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('admin/gallery/edit') }}/{{ $gallery->id }}" type="button" class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('admin/gallery/delete') }}/{{ $gallery->id }}" type="button" class="btn btn-danger">Delete</a>
                                     </div>
                                 </td>
                             </tr>

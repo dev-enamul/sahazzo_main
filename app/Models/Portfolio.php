@@ -10,8 +10,14 @@ class Portfolio extends Model
     use HasFactory; 
 
     protected $fillable = [
-        'short_text',
+        'service_id',
         'title',
+        'short_description',
+        'description',
         'portfolio_photo',
     ];
+
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
 }

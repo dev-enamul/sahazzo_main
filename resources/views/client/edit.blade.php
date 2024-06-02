@@ -18,15 +18,23 @@
                     </div>
                     @endif
 
-                    <form method="post" action="{{ url('client/edit') }}/{{ $client_info->id }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ url('admin/client/edit') }}/{{ $client_info->id }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Short Text</label>
-                            <textarea class="form-control" name="short_text" rows="6">{{ $client_info->short_text }}</textarea>
-                            @error('short_text')
+                            <label>Client Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="{{$client_info->name}}" name="name" required />
+                            @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Website Link</label>
+                            <input type="text" class="form-control" value="{{$client_info->weblink}}" name="weblink" />
+                            @error('weblink')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div> 
                         <div class="form-group">
                             <label>Client Photo</label><br>
                             <img id="new_image" src="{{ asset('uploads/client_photos') }}/{{ $client_info->clients_photo }}" alt="not found" height="150" width="250">

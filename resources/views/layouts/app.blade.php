@@ -24,9 +24,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <!-- <a class="navbar-brand" href="{{ url('/') }}">
                     <h3>Tech2view</h3>
-                </a>
+                </a> -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -47,12 +47,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('service') }}">Services</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('portfolio') }}">Project</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('client') }}">Clients</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('portfolio') }}">Portfolio</a>
-                            </li>
+                            </li> 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
                             </li>

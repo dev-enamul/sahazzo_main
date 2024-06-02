@@ -1,23 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use Image;
-use File;
-use App\Models\Client;
-use App\Http\Requests\ClientValidation;
-use Illuminate\Http\Request;
 
-class ClientController extends Controller
+use Illuminate\Http\Request; 
+use App\Models\Gallery;
+
+class GalleryController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    function client()
+    function gallery()
     {
-        $clients = Client::all();
-        return view('client.index', compact('clients'));
+        $galleries = Gallery::all();
+        return view('gallery.index', compact('galleries'));
     }
 
     public function clientinsert(ClientValidation $request)
@@ -75,5 +73,4 @@ class ClientController extends Controller
         $client->delete();
         return back()->with('deletestatus', 'Client deleted successfully!!');
     }
-
 }

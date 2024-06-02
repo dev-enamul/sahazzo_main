@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('portfolios', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->longText('short_text')->nullable();
+            $table->id();
+            $table->unsignedBigInteger('service_id');
             $table->string('title');
+            $table->text('short_description');
+            $table->text('description');
             $table->string('portfolio_photo');
             $table->timestamps();
         });

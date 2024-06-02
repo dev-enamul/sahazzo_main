@@ -24,7 +24,8 @@ class ClientValidation extends FormRequest
     public function rules()
     {
         return [
-            'short_text' => 'required',
+            'name' => 'required',
+            'weblink' => 'required',
             'clients_photo' => 'required',
         ];
     }

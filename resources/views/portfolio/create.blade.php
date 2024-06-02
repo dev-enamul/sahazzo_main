@@ -2,30 +2,27 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 m-auto">
-            <div class="card">
+<div class="card">
                 <div class="card-header">
-                    Edit Project
+                    Add Portfolio
                 </div>
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('status') }}
+                        {{ session('status') }}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     @endif
-
-                    <form method="post" action="{{ url('admin/portfolio/edit') }}/{{ $portfolio_info->id }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('portfolioinsert') }}" enctype='multipart/form-data'>
                         @csrf 
 
                         <div class="form-group">
                             <label>Select Service <span class="text-danger">*</span></label>
                             <select class="form-control" name="service_id">
                                 @foreach($services as $service)
-                                    <option {{$portfolio_info->service_id==$service->id?"selected":""}} value="{{$service->id}}" required>{{$service->title}}</option>
+                                    <option value="{{$service->id}}" required>{{$service->title}}</option>
                                 @endforeach
                             </select>
                             @error('title')
@@ -34,45 +31,41 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Title</label>
-                            <input type="text" class="form-control" name="title" value="{{ $portfolio_info->title }}">
+                            <label>Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="title" required>
                             @error('title')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label>Short Description</label>
-                            <input type="text" class="form-control" name="short_description" value="{{ $portfolio_info->short_description }}">
-                            @error('short_description')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>  
-
-                        <div class="form-group">
-                            <label>Description <span class="text-danger">*</span></label>
-                           <textarea rows="10" class="form-control" name="description" required>{{ $portfolio_info->description }}</textarea>
-                            @error('description')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label>About Photo</label><br>
-                            <img id="new_image" src="{{ asset('uploads/portfolio_photos') }}/{{ $portfolio_info->portfolio_photo }}" alt="not found" height="150" width="250">
-                        </div>
+                            <label>Short Text <span class="text-danger">*</span></label>
+                           <textarea class="form-control" name="short_description" required></textarea>
+                            @error('short_text')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>  
 
                         <div class="form-group">
-                            <label>New Photo</label>
-                            <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>
+                            <label>Description <span class="text-danger">*</span></label>
+                           <textarea rows="10" class="form-control" name="description" required></textarea>
+                            @error('description')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Photo <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" name="portfolio_photo" required>
+                            @error('portfolio_photo')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-info">Update</button>
+                        <button type="submit" class="btn btn-success">Create</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 
 @endsection
