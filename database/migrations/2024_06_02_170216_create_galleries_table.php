@@ -8,13 +8,14 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     */
+     */ 
     public function up(): void
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('project_id');
-            $table
+            $table->tinyInteger('project_id')->nullable();
+            $table->string('title')->nullable();
+            $table->string('gallery_photo');
             $table->timestamps();
         });
     }

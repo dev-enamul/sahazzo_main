@@ -43,7 +43,7 @@
                                 <td>{{ $gallery->project->title }}</td>
                                 <td>{{ $gallery->title }}</td>
                                 <td>
-                                    <img width="80" height="60" src="{{ asset('uploads/gallery_photos') }}/{{ $client->gallery_photo }}" alt="not found">
+                                    <img width="80" height="60" src="{{ asset('uploads/gallery_photos') }}/{{ $gallery->gallery_photo }}" alt="not found">
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
@@ -65,7 +65,7 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    Add Clients
+                    Add Gallery
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -76,28 +76,32 @@
                         </button>
                     </div>
                     @endif
-                    <form method="post" action="{{ route('clientinsert') }}" enctype='multipart/form-data'>
+                    <form method="post" action="{{ route('gallery.store') }}" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group">
-                            <label>Client Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="name" required />
-                            @error('name')
+                            <label>Select Project</label>
+                            <select name="project_id" class="form-control">
+                                @foreach($projects as $project)
+                                    <option value="{{$project->id}}">{{$project->title}}</option>
+                                @endforeach
+                            </select>
+                            @error('project_id')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div> 
 
                         <div class="form-group">
-                            <label>Website Link</label>
-                            <input type="text" class="form-control" name="weblink" />
-                            @error('weblink')
+                            <label>Title <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="title" required/>
+                            @error('title')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div> 
 
                         <div class="form-group">
                             <label>Photo <span class="text-danger">*</span></label>
-                            <input type="file" class="form-control" name="clients_photo" required>
-                            @error('clients_photo')
+                            <input type="file" class="form-control" name="gallery_photo" required>
+                            @error('gallery_photo')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

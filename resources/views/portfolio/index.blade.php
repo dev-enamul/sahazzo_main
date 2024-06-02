@@ -51,7 +51,7 @@
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $portfolio->title }}</td>
-                                <td>{{ $portfolio->service->title }}</td>
+                                <td>{{ @$portfolio->service->title }}</td>
                                 <td>{{ $portfolio->short_description }}</td> 
                                 <td>
                                     <img width="80" height="60" src="{{ asset('uploads/portfolio_photos') }}/{{ $portfolio->portfolio_photo }}" alt="not found">

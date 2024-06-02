@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use File;
 use Illuminate\Http\Request; 
 use App\Models\Gallery;
+use App\Models\Portfolio; 
 
 class GalleryController extends Controller
 {
@@ -15,62 +16,65 @@ class GalleryController extends Controller
     function gallery()
     {
         $galleries = Gallery::all();
-        return view('gallery.index', compact('galleries'));
+        $projects = Portfolio::all();
+        return view('gallery.index', compact('galleries','projects'));
     }
 
-    public function clientinsert(ClientValidation $request)
+    public function store(Request $request)
     {
-        $info = Client::create($request->except('_token'));
-        if ($request->hasFile('clients_photo')) {
-            $client_photo = $request->file('clients_photo');
+        $info = Gallery::create($request->except('_token'));
+        if ($request->hasFile('gallery_photo')) {
+            $client_photo = $request->file('gallery_photo');
             $new_name = $info->id . "." . $client_photo->getClientOriginalExtension();
-            $save_location = public_path("uploads/client_photos/" . $new_name);
+            $save_location = public_path("uploads/gallery_photos/" . $new_name);
 
             // Move the uploaded file to the desired location
             move_uploaded_file($client_photo->getPathname(), $save_location);
 
             // Update the client with the new image name
-            $info->clients_photo = $new_name;
+            $info->gallery_photo = $new_name;
             $info->save();
         }
         return back()->with('status', 'Client insert successfully!!');
     }
 
-    function clientedit($client_id)
+    function edit($id)
     {
-       $client_info =  Client::findorFail($client_id);
-       return view('client.edit' , compact('client_info'));
+       $gallery =  Gallery::findorFail($id);
+       $projects = Portfolio::all();
+       return view('gallery.edit' , compact('gallery','projects'));
     }
 
-    public function clientupdate(Request $request, $id)
+    public function update(Request $request, $id)
     {
-        if ($request->hasFile('new_image')) {
-            unlink(public_path('uploads/client_photos/' . Client::findOrFail($id)->clients_photo));
-            $client_photo = $request->file('new_image');
-            $new_name = $id . "." . $client_photo->getClientOriginalExtension();
-            $save_location = public_path("uploads/client_photos/" . $new_name);
+        if ($request->hasFile('gallery_photo')) {
+            unlink(public_path('uploads/gallery_photos/' . Gallery::findOrFail($id)->gallery_photo));
+            $gallery_photo = $request->file('gallery_photo');
+            $new_name = $id . "." . $gallery_photo->getClientOriginalExtension();
+            $save_location = public_path("uploads/gallery_photos/" . $new_name);
 
             // Move the uploaded file to the desired location
-            move_uploaded_file($client_photo->getPathname(), $save_location);
+            move_uploaded_file($gallery_photo->getPathname(), $save_location);
 
             // Update the client with the new image name
-            Client::findOrFail($id)->update([
+            Gallery::findOrFail($id)->update([
                 'clients_photo' => $new_name,
             ]);
         }
-        Client::findOrFail($request->id)->update([
-            'short_text' => $request->short_text,
+        Gallery::findOrFail($request->id)->update([
+            'project_id' => $request->project_id,
+            'title' => $request->title,
         ]);
-        return redirect()->route('client')->withEditstatus('Client Edited successfully!!');
+        return redirect()->route('gallery')->withEditstatus('Client Edited successfully!!');
     }
 
-    public function clientdelete($client_id)
+    public function delete($client_id)
     {
-        $client = Client::findOrFail($client_id);
-        if (File::exists(public_path('uploads/client_photos/' . $client->clients_photo))) {
-            unlink(public_path('uploads/client_photos/' . $client->clients_photo));
+        $gallery = Gallery::findOrFail($client_id);
+        if (File::exists(public_path('uploads/gallery_photos/' . $gallery->gallery_photo))) {
+            unlink(public_path('uploads/gallery_photos/' . $gallery->gallery_photo));
         }
-        $client->delete();
+        $gallery->delete();
         return back()->with('deletestatus', 'Client deleted successfully!!');
     }
 }
