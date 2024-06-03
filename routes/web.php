@@ -13,6 +13,8 @@ use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController; 
 use App\Http\Controllers\GalleryController; 
+use App\Http\Controllers\BlogController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/gallery/edit/{service_id}', [GalleryController::class,'edit']);
     Route::post('/gallery/edit/{id}',[GalleryController::class,'update']);
     Route::get('/gallery/delete/{service_id}', [GalleryController::class,'delete']);
+
+    Route::get('/blog',  [BlogController::class,'blog'])->name('blog');
+    Route::get('/blog/create',  [BlogController::class,'create'])->name('blog.create');
+    Route::post('/blog/insert', [BlogController::class,'store'])->name('blog.store');
+    Route::get('/blog/edit/{service_id}', [BlogController::class,'edit']);
+    Route::post('/blog/edit/{id}',[BlogController::class,'update']);
+    Route::get('/blog/delete/{service_id}', [BlogController::class,'delete']);
 
 
     

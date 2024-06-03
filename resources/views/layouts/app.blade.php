@@ -57,14 +57,21 @@
                             </li>
 
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('blog') }}">Blog</a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('client') }}">Clients</a>
                             </li> 
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
-                            </li>
+                            </li> 
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('team') }}">Team</a>
-                            </li>
+                            </li> 
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                             </li>
