@@ -75,7 +75,7 @@
                         </button>
                     </div>
                     @endif
-                    <form method="post" action="{{ url('contact/insert') }}" enctype='multipart/form-data'>
+                    <form method="post" action="{{ url('admin/contact/insert') }}" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group">
                             <label>Description</label>

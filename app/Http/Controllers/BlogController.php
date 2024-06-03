@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Service;
+use File;
 
 class BlogController extends Controller
 {
@@ -33,58 +34,58 @@ class BlogController extends Controller
     } 
 
     public function store(Request $request)
-    {
-        $info = Gallery::create($request->except('_token'));
-        if ($request->hasFile('gallery_photo')) {
-            $client_photo = $request->file('gallery_photo');
-            $new_name = $info->id . "." . $client_photo->getClientOriginalExtension();
-            $save_location = public_path("uploads/gallery_photos/" . $new_name);
-
-            // Move the uploaded file to the desired location
-            move_uploaded_file($client_photo->getPathname(), $save_location);
-
-            // Update the client with the new image name
-            $info->gallery_photo = $new_name;
-            $info->save();
+    { 
+        $model = new Blog;
+        $slug = getSlug($model, $request->title);
+        $input = $request->all();
+        $input['slug'] = $slug;  
+        if ($request->hasFile('blog_photo')) {
+            $blog_photo = $request->file('blog_photo');
+            $new_name = $slug . "." . $blog_photo->getClientOriginalExtension();
+            $save_location = public_path("uploads/blog_photos/" . $new_name); 
+            move_uploaded_file($blog_photo->getPathname(), $save_location); 
+            $input['blog_photo'] = $new_name; 
         }
-        return back()->with('status', 'Client insert successfully!!');
+        $info = $model->create($input);  
+        return redirect()->route('blog')->with('status', 'Blog insert successfully!!');
     }
 
     function edit($id)
     {
-       $gallery =  Gallery::findorFail($id);
-       $projects = Portfolio::all();
-       return view('gallery.edit' , compact('gallery','projects'));
+       $blog =  Blog::findorFail($id);
+       $services = Service::all();
+       return view('blog.edit' , compact('services','blog'));
     }
 
     public function update(Request $request, $id)
     {
-        if ($request->hasFile('gallery_photo')) {
-            unlink(public_path('uploads/gallery_photos/' . Gallery::findOrFail($id)->gallery_photo));
-            $gallery_photo = $request->file('gallery_photo');
-            $new_name = $id . "." . $gallery_photo->getClientOriginalExtension();
-            $save_location = public_path("uploads/gallery_photos/" . $new_name);
-
-            // Move the uploaded file to the desired location
-            move_uploaded_file($gallery_photo->getPathname(), $save_location);
-
-            // Update the client with the new image name
-            Gallery::findOrFail($id)->update([
-                'clients_photo' => $new_name,
-            ]);
+        $input = $request->all();
+        $model = new Blog;
+        $slug = getSlug($model, $request->title);
+        $input['slug'] = $slug;
+        $blog = $model->findOrFail($id);
+        if ($request->hasFile('blog_photo')) {
+            $filePath = public_path('uploads/blog_photos/' . $blog->blog_photo); 
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+            $blog_photo = $request->file('blog_photo');
+            $new_name = $slug . "." . $blog_photo->getClientOriginalExtension();
+            $save_location = public_path("uploads/blog_photos/" . $new_name); 
+            move_uploaded_file($blog_photo->getPathname(), $save_location);
+  
+            $input['blog_photo'] = $new_name;
         }
-        Gallery::findOrFail($request->id)->update([
-            'project_id' => $request->project_id,
-            'title' => $request->title,
-        ]);
-        return redirect()->route('gallery')->withEditstatus('Client Edited successfully!!');
+        $blog->update($input);
+        return redirect()->route('blog')->withEditstatus('Blog Update successfully!!');
     }
 
     public function delete($client_id)
     {
-        $gallery = Gallery::findOrFail($client_id);
-        if (File::exists(public_path('uploads/gallery_photos/' . $gallery->gallery_photo))) {
-            unlink(public_path('uploads/gallery_photos/' . $gallery->gallery_photo));
+        $blog = Blog::findOrFail($client_id);
+        $filePath = public_path('uploads/blog_photos/' . $blog->blog_photo); 
+        if (file_exists($filePath)) {
+            unlink($filePath);
         }
         $gallery->delete();
         return back()->with('deletestatus', 'Client deleted successfully!!');

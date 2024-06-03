@@ -13,3 +13,15 @@ if (!function_exists('getSlug')) {
         return $slug;
     }
 }
+
+if (!function_exists('get_date')) {
+    function get_date($inputDate, $format = 'M j, Y', $timezone = 'Asia/Dhaka') {
+        try {
+            $date = new DateTime($inputDate);
+            $date->setTimezone(new DateTimeZone($timezone));
+            return $date->format($format);
+        } catch (Exception $e) {
+            return '-';
+        }
+    }
+}

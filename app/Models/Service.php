@@ -14,5 +14,9 @@ class Service extends Model
         'description',
         'services_photo',
         'slug',
-    ];
+    ]; 
+
+    public function blogs(){
+        return $this->hasMany(Blog::class);
+    }
 }

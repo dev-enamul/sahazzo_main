@@ -14,6 +14,7 @@
                 <li class="{{ request()->is('about-us') ? 'active' : '' }}">
                     <a href="/about-us" wire:navigate.hover>About Us</a>
                 </li> 
+                
                 <li class="dropdown {{ request()->is('service') ? 'active' : '' }}">
                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">Service <i
                             class="fa fa-angle-down small"></i></a>
@@ -21,6 +22,7 @@
                         <li class="dropdown-item"><a href="/service" wire:navigate.hover>Default</a></li> 
                     </ul>
                 </li>  
+
                 <li><a href="/project" wire:navigate.hover>Project</a></li> 
                 <li><a href="/blog" wire:navigate.hover>Blog</a></li>
                 <li><a href="/contact" wire:navigate.hover>Career</a></li> 

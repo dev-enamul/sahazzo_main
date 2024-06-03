@@ -49,8 +49,9 @@
                         </thead>
                         <tbody>
                             @forelse ($blogs as $blog)
-                            <tr>
+                            <tr class="{{$blog->status==0?'table-warning':''}}">
                                 <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $blog->service->title }}</td>
                                 <td>{{ $blog->title }}</td>
                                 <td>{{ $blog->short_description }}</td> 
                                 <td>{{ $blog->description }} </td>

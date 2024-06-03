@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="{{ asset('website/assets/css/main.css') }}" id="theme">
         <!-- Change color theme -->
         <link rel="stylesheet" href="{{ asset('website/style-switcher.css') }}">
+        
 
         <!-- JAVASCRIPT
         ===============================================================-->

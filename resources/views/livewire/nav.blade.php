@@ -27,7 +27,7 @@
                 </li>  
                 <li><a href="/project" wire:navigate.hover>Project</a></li> 
                 <li><a href="/blog" wire:navigate.hover>Blog</a></li>
-                <li><a href="/contact" wire:navigate.hover>Career</a></li> 
+                <li class="{{ request()->is('career') ? 'active' : '' }}"><a href="/career" wire:navigate.hover>Career</a></li> 
                 <li class="{{ request()->is('contact') ? 'active' : '' }}"><a href="/contact" wire:navigate.hover>Contact</a></li>  
             </ul>
         </div>
