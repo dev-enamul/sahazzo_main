@@ -14,8 +14,8 @@ class ContactController extends Controller
 
     function contact()
     {
-        $contacts = Contact::all();
-        return view('contact.index', compact('contacts'));
+        $contact = Contact::first();
+        return view('contact.index', compact('contact'));
     }
 
     function contactinsert(Request $request)
@@ -32,24 +32,7 @@ class ContactController extends Controller
 
     function contactupdate(Request $request, $id)
     {
-        Contact::findOrFail($request->id)->update([
-            'description' => $request->description,
-            'address' => $request->address,
-            'phone_no' => $request->phone_no,
-            'email' => $request->email,
-            'twitter' => $request->twitter,
-            'fb' => $request->fb,
-            'google' => $request->google,
-            'linkedin' => $request->linkedin,
-
-        ]);
-        return redirect('contact')->withEditstatus('Contact Edited successfully!!');
-    }
-
-    function contactdelete($contact_id)
-    {
-        // $contact = Contact::findorFail($contact_id);
-        Contact::findOrFail($contact_id)->delete();
-        return back()->with('deletestatus', 'About deleted successfully!!');
-    }
+        Contact::findOrFail($request->id)->update($request->all());
+        return redirect()->route('contact')->withEditstatus('Contact Edited successfully!!');
+    } 
 }

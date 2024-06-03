@@ -3,12 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Contact as ContactModel;
 
 class Contact extends Component
 {
-    public $contactData;
+    public $contact;
     public function mount(){
-        $this->contactData = Contact::first();
+        $this->contact = ContactModel::first();
     }
     public function render()
     {

@@ -14,6 +14,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController; 
 use App\Http\Controllers\GalleryController; 
 use App\Http\Controllers\BlogController; 
+use App\Http\Controllers\CVController; 
 
 
 /*
@@ -110,6 +111,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/contact/edit/{contact_id}', [ContactController::class, 'contactedit']);
     Route::post('/contact/edit/{id}', [ContactController::class, 'contactupdate']);
     Route::get('/contact/delete/{contact_id}', [ContactController::class, 'contactdelete']);
+
+    Route::get('/cv',[CVController::class,'index'])->name('cv');
+    Route::get('/cv/show/{id}',[CVController::class,'show'])->name('cv.show');
+    Route::get('/cv/delete/{id}',[CVController::class,'delete'])->name('cv.delete');
 });
 
 

@@ -13,10 +13,17 @@ class Contact extends Model
         'description',
         'address',
         'phone_no',
+        'phone_no_2',
         'email',
+        'email2',
+        'map',
         'twitter',
         'fb',
-        'google',
+        'youtube',
         'linkedin',
+        'instagram',
+        'whatsapp',
+        'snapchat',
+        'pinterest',
     ];
 }

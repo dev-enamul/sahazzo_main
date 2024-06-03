@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-6 m-auto">
+        <div class="col-md-12 m-auto">
             <div class="card">
                 <div class="card-header">
                     Edit Contact
@@ -18,7 +18,7 @@
                     </div>
                     @endif
 
-                    <form method="post" action="{{ url('contact/edit') }}/{{ $contact_info->id }}">
+                    <form method="post" action="{{ url('admin/contact/edit') }}/{{ $contact_info->id }}">
                         @csrf
                         <div class="form-group">
                             <label>Description</label>
@@ -31,6 +31,11 @@
                         <div class="form-group">
                             <label>Phone No</label>
                             <input type="text" class="form-control" name="phone_no" value="{{ $contact_info->phone_no }}">
+                        </div>
+                   
+                        <div class="form-group">
+                            <label>Google Map</label>
+                            <input type="text" class="form-control" name="map" value="{{ $contact_info->map }}">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -45,8 +50,8 @@
                             <input type="text" class="form-control" name="fb" value="{{ $contact_info->fb }}">
                         </div>
                         <div class="form-group">
-                            <label>Google</label>
-                            <input type="text" class="form-control" name="google" value="{{ $contact_info->google }}">
+                            <label>Youtube</label>
+                            <input type="text" class="form-control" name="youtube" value="{{ $contact_info->youtube }}">
                         </div>
                         <div class="form-group">
                             <label>Linkedin</label>
@@ -54,7 +59,7 @@
                         </div>
 
 
-                        <button type="submit" class="btn btn-info">Edit</button>
+                        <button type="submit" class="btn btn-info">Update</button>
                     </form>
                 </div>
             </div>

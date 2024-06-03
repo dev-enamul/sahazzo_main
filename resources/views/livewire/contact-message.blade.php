@@ -26,7 +26,7 @@
         </div>
         <div class="form-group">
             <label for="message">Message <span class="text-danger">*</span></label>
-            <textarea class="form-control" rows="5" wire:model="message" placeholder="Message" required></textarea>
+            <textarea class="form-control" rows="2" wire:model="message" placeholder="Message" required></textarea>
             @error('message') <span class="text-danger">{{ $message }}</span> @enderror
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

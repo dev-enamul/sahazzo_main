@@ -61,10 +61,9 @@
         ===============================================================--> 
     
         @livewire('nav')
-        {{ $slot }}
-        
-
-        @include('components/imports/footer')
+        {{ $slot }} 
+ 
+        <livewire:common.footer />
         <!-- JAVASCRIPT
         ===============================================================-->
         <!-- JQuery --> 

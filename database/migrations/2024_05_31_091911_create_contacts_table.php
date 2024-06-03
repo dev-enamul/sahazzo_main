@@ -16,11 +16,18 @@ return new class extends Migration
             $table->longText('description');
             $table->longText('address');
             $table->string('phone_no');
+            $table->string('phone_no_2')->nullable();
             $table->string('email');
+            $table->string('email2')->nullable();
+            $table->text('map')->nullable();
             $table->string('twitter')->nullable();
             $table->string('fb')->nullable();
-            $table->string('google')->nullable();
+            $table->string('youtube')->nullable();
             $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('snapchat')->nullable();
+            $table->string('pinterest')->nullable(); 
             $table->timestamps();
         });
     }

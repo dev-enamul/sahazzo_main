@@ -37,19 +37,19 @@ class JobApply extends Component
         }  
     
         $cvPath = $this->cv->store('public/cvs');
+        $cvFileName = pathinfo($cvPath, PATHINFO_BASENAME);
     
         ApplyJobSubmit::create([
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
             'cover_letter' => $this->coverLetter,
-            'cv' => $cvPath,
+            'cv' => $cvFileName,
         ]);
         
         $this->reset(['name', 'email', 'phone', 'coverLetter', 'cv']); 
         session()->flash('message', 'Your CV has been submitted successfully!');
-        $this->submitting = false;
-        $this->dispatchBrowserEvent('scrollToTop');
+        $this->submitting = false; 
     }
  
 
