@@ -1,8 +1,8 @@
 <header>
     <div class="bg-img-fixed-content">
         <video loop muted autoplay poster="{{asset('website/assets/videos/videoframe.jpg')}}" class="bg-video">
-            <source src="{{asset('website/assets/videos/corporate.webm')}}" type="video/webm">
-            <source src="{{asset('website/assets/videos/corporate.mp4')}}" type="video/mp4">
+            <!-- <source src="{{asset('website/assets/videos/corporate.webm')}}" type="video/webm"> -->
+            <source src="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}" type="video/mp4">
         </video>
         <!-- HOME PROMO -->
         <section class="home-promo home-promo-video">

@@ -47,8 +47,7 @@ class SliderController extends Controller
     }
 
     function sliderupdate(Request $request, $id)
-{ 
-
+    {  
     $slider = Slider::findOrFail($id);
     if ($request->hasFile('new_image')) { 
         $old_image_path = public_path('uploads/slider_photos/' . $slider->slider_photo);
@@ -68,7 +67,7 @@ class SliderController extends Controller
     $slider->save();
 
 
-    return redirect('slider')->withEditstatus('Slider edited successfully!');
+    return redirect()->route('slider')->withEditstatus('Slider edited successfully!');
 }
 
 

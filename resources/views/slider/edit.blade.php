@@ -18,14 +18,15 @@
                     </div>
                     @endif
 
-                    <form method="post" action="{{ url('slider/edit') }}/{{ $slider_info->id }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ url('admin/slider/edit') }}/{{ $slider_info->id }}" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group">
-                            <input type="text" class="form-control" name="slider_title" id="" value="{{$slider_info->slider_title}}">
+                        <label>Slider Title <span class="text-danger">*</span></label> 
+                            <input type="text" class="form-control" name="slider_title" id="" value="{{$slider_info->slider_title}}" required>
                         </div> 
                          
                         <div class="form-group">
-                            <label>New Video</label> 
+                            <label>New Video <span class="text-danger">* [1280*720 Px]</span></label> 
                             <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);">
                         </div>   
                         <button type="submit" class="btn btn-info">Update</button>

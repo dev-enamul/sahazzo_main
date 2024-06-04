@@ -8,18 +8,9 @@
                     </div>
                     <div class="col-md-12">
                         <div class="slick-carousel" id="clients">
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo1.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo2.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo3.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo4.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo5.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo6.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo1.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo2.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo3.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo4.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo5.png')}}" alt="Client"></a></div>
-                            <div><a href="#!"><img src="{{asset('website/assets/img/logo6.png')}}" alt="Client"></a></div>
+                            @foreach($clients as $client)
+                            <div><a href="{{$client->weblink}}"><img src="{{asset('uploads/client_photos/'.$client->clients_photo)}}" alt="{{$client->name}}"></a></div> 
+                            @endforeach
                         </div>
                     </div>
                 </div><!-- /row -->
