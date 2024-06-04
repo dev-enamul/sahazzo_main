@@ -13,6 +13,7 @@ class Team extends Model
         'designation',
         'tm_photo',
         'fb',
+        'twiter',
         'google',
         'linkedin',
     ];

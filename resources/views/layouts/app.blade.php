@@ -77,6 +77,10 @@
                             </li>
 
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('contact.message') }}">User Message</a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cv') }}">CV</a>
                             </li>
                         @endauth

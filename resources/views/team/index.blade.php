@@ -3,10 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Team
+                <div class="card-header d-flex justify-content-between">
+                    <span>Team</span>
+                    <a class="btn btn-success" href="{{route('team.create')}}">Create Team</a>
                 </div>
                 <div class="card-body table-responsive">
                     @if (session('editstatus'))
@@ -52,85 +53,21 @@
                                 <td>{{ Str::limit($team->linkedin,20) }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('team/edit') }}/{{ $team->id }}" type="button" class="btn btn-primary">Edit</a>
-                                        <a href="{{ url('team/delete') }}/{{ $team->id }}" type="button" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('admin/team/edit') }}/{{ $team->id }}" type="button" class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('admin/team/delete') }}/{{ $team->id }}" type="button" class="btn btn-danger">Delete</a>
                                     </div>
                                 </td>
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center text-danger">No Data Available</td>
+                                    <td colspan="8" class="text-center text-danger">No Data Available</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Add Team
-                </div>
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('status') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    @endif
-                    <form method="post" action="{{ url('team/insert') }}" enctype='multipart/form-data'>
-                        @csrf
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name">
-                            @error('name')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Designation</label>
-                            <input type="text" class="form-control" name="designation">
-                            @error('designation')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Photo</label>
-                            <input type="file" class="form-control" name="tm_photo">
-                            @error('tm_photo')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>FB</label>
-                            <input type="text" class="form-control" name="fb">
-                            @error('fb')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Google</label>
-                            <input type="text" class="form-control" name="google">
-                            @error('google')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Linkedin</label>
-                            <input type="text" class="form-control" name="linkedin">
-                            @error('linkedin')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <button type="submit" class="btn btn-success">Add</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+        </div> 
     </div>
 </div>
 

@@ -20,6 +20,10 @@ class TeamController extends Controller
         return view('team.index', compact('teams'));
     }
 
+    public function create(){
+        return view('team.create');
+    }
+
     public function teaminsert(TeamValidation $request)
     {
         $info = Team::create($request->except('_token'));
@@ -33,7 +37,7 @@ class TeamController extends Controller
             $info->tm_photo = $new_name;
             $info->save();
         }
-        return back()->with('status', 'Team insert successfully!!');
+        return redirect()->route('team')->with('status', 'Team insert successfully!!');
     }
 
     function teamedit($team_id)
@@ -44,6 +48,7 @@ class TeamController extends Controller
 
     public function teamupdate(Request $request, $id)
     {
+        $input = $request->all();
         if ($request->hasFile('new_image')) {
             unlink(public_path('uploads/team_photos/' . Team::findOrFail($id)->tm_photo));
             $team_photo = $request->file('new_image');
@@ -57,15 +62,9 @@ class TeamController extends Controller
         } else {
             $imge = Team::findOrFail($id)->tm_photo;
         }
-        Team::findOrFail($request->id)->update([
-            'name' => $request->name,
-            'designation' => $request->designation,
-            'fb' => $request->fb,
-            'google' => $request->google,
-            'linkedin' => $request->linkedin,
-            'tm_photo' => $imge,
-        ]);
-        return redirect('team')->withEditstatus('Team Edited successfully!!');
+        $input['tm_photo']=$imge;
+        Team::findOrFail($request->id)->update($input);
+        return redirect()->route('team')->withEditstatus('Team Edited successfully!!');
     }
 
     public function teamdelete($team_id)

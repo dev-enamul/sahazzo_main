@@ -15,7 +15,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController; 
 use App\Http\Controllers\BlogController; 
 use App\Http\Controllers\CVController; 
-
+use App\Http\Controllers\ContactMessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +101,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/testimonial/delete/{testimonial_id}', [TestimonialController::class, 'testimonialdelete']);
     
     Route::get('/team', [TeamController::class, 'team'])->name('team');
+    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
     Route::post('/team/insert', [TeamController::class, 'teaminsert'])->name('teaminsert');
     Route::get('/team/edit/{team_id}', [TeamController::class, 'teamedit']);
     Route::post('/team/edit/{id}', [TeamController::class, 'teamupdate']);
@@ -115,6 +116,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/cv',[CVController::class,'index'])->name('cv');
     Route::get('/cv/show/{id}',[CVController::class,'show'])->name('cv.show');
     Route::get('/cv/delete/{id}',[CVController::class,'delete'])->name('cv.delete');
+
+    Route::get('/contact-message',[ContactMessageController::class,'index'])->name('contact.message');
+    Route::get('/contact-message/status/{id}',[ContactMessageController::class,'status'])->name('contact.messag.status');
+    Route::get('/contact-message/delete/{id}',[ContactMessageController::class,'delete'])->name('contact.messag.delete');
 });
 
 

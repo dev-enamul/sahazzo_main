@@ -54,6 +54,7 @@
                             @endforelse
                         </tbody>
                     </table>
+                    {{$cvs->links('pagination::bootstrap-4')}}
                 </div>
             </div>
         </div> 

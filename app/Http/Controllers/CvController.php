@@ -7,7 +7,7 @@ use App\Models\JobApply;
 class CvController extends Controller
 {
     public function index(){
-        $cvs = JobApply::latest()->get();
+        $cvs = JobApply::latest()->paginate(20);
         return view('cv.index',compact('cvs'));
     }
 

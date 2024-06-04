@@ -3,31 +3,38 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12 m-auto">
-            <div class="card">
+        <div class="col-12 m-auto">
+        <div class="card">
                 <div class="card-header">
-                    Edit Team
+                    Add Team
                 </div>
                 <div class="card-body"> 
-                    <form method="post" action="{{ url('admin/team/edit') }}/{{ $team_info->id }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ url('admin/team/insert') }}" enctype='multipart/form-data'>
                         @csrf
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="name" value="{{ $team_info->name }}">
+                            <input type="text" class="form-control" name="name">
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label>Designation</label>
-                            <input type="text" class="form-control" name="designation" value="{{ $team_info->designation }}">
+                            <input type="text" class="form-control" name="designation">
                             @error('designation')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label>Photo</label>
+                            <input type="file" class="form-control" name="tm_photo">
+                            @error('tm_photo')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label>FB</label>
-                            <input type="text" class="form-control" name="fb" value="{{ $team_info->fb }}">
+                            <input type="text" class="form-control" name="fb">
                             @error('fb')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -35,7 +42,7 @@
 
                         <div class="form-group">
                             <label>Twiter</label>
-                            <input type="text" class="form-control" value="{{ $team_info->twiter }}" name="twiter">
+                            <input type="text" class="form-control" name="twiter">
                             @error('twiter')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -43,29 +50,20 @@
 
                         <div class="form-group">
                             <label>Google</label>
-                            <input type="text" class="form-control" name="google" value="{{ $team_info->google }}">
+                            <input type="text" class="form-control" name="google">
                             @error('google')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label>Linkedin</label>
-                            <input type="text" class="form-control" name="linkedin" value="{{ $team_info->linkedin }}">
+                            <input type="text" class="form-control" name="linkedin">
                             @error('linkedin')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div> 
-                        <div class="form-group">
-                            <label>New Photo</label>
-                            <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>
                         </div>
 
-                        <div class="form-group">
-                            <label>Team Photo</label><br>
-                            <img id="new_image" src="{{ asset('uploads/team_photos') }}/{{ $team_info->tm_photo }}" alt="not found" height="150" width="250">
-                        </div>
-
-                        <button type="submit" class="btn btn-info">Update</button>
+                        <button type="submit" class="btn btn-success">Add</button>
                     </form>
                 </div>
             </div>

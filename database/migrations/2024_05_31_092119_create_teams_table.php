@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('designation');
             $table->string('tm_photo');
             $table->string('fb')->nullable();
+            $table->string('twiter')->nullable();
             $table->string('google')->nullable();
             $table->string('linkedin')->nullable();
             $table->timestamps();
