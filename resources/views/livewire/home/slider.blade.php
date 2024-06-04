@@ -10,7 +10,7 @@
                 <h2 class="titlepro">
                     <span class="upper">Welcome to</span>
                     <span class="middle">Corpboot <strong>Template</strong></span>
-                    <span class="bottom">A Bootstrap website template for business</span>
+                    <span class="bottom">{{$slider->slider_title}}</span>
                 </h2>
                 <a href="/contact" wire:navigate.hover class="btn btn-transparent"> Contact Us</a>
             </div>

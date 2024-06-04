@@ -25,14 +25,9 @@
                         </div> 
                          
                         <div class="form-group">
-                            <label>New Photo</label> 
+                            <label>New Video</label> 
                             <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);">
-                        </div>  
-
-                        <div class="form-group">
-                            <label>Slider Photo</label><br>
-                            <img id="new_image" src="{{ asset('uploads/slider_photos') }}/{{ $slider_info->slider_photo }}" alt="not found" height="150" width="250">
-                        </div>
+                        </div>   
                         <button type="submit" class="btn btn-info">Update</button>
                     </form>
                 </div>

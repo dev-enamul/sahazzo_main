@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     Slider
@@ -30,7 +30,7 @@
                             <tr>
                                 <th>SL No</th>
                                 <th>Slider Title</th>
-                                <th>Slider Photo</th>
+                                <th>Slider Video</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,12 +40,13 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $slider->slider_title }}</td>
                                 <td>
-                                    <img width="80" height="60" src="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}" alt="not found">
+                                    <!-- <img width="80" height="60" src="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}" alt="not found"> -->
+                                    <a target="blank" href="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}">Open Now</a>
                                 </td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('slider/edit') }}/{{ $slider->id }}" type="button" class="btn btn-primary">Edit</a>
-                                        <a href="{{ url('slider/delete') }}/{{ $slider->id }}" type="button" class="btn btn-danger">Delete</a>
+                                        <a href="{{ url('admin/slider/edit') }}/{{ $slider->id }}" type="button" class="btn btn-primary">Edit</a>
+                                        <!-- <a href="{{ url('admin/slider/delete') }}/{{ $slider->id }}" type="button" class="btn btn-danger">Delete</a> -->
                                     </div>
                                 </td>
                             </tr>
@@ -59,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     Add Slider
@@ -81,9 +82,10 @@
                             @error('slider_title')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> 
+                        
                         <div class="form-group">
-                            <label>Slider Image</label>
+                            <label>Slider Video <span class="text-danger">* 1280X720 PX</span></label>
                             <input type="file" class="form-control" name="slider_photo">
                             @error('slider_photo')
                                 <span class="text-danger">{{ $message }}</span>
@@ -94,7 +96,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

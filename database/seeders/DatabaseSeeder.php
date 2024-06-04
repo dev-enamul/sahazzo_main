@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ContactsTableSeeder::class,
             UserTableSeeder::class,
+            SliderVideoSeeder::class,
         ]);
     }
 }
