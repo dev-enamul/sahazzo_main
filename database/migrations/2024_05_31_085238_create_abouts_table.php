@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('heading');
-            $table->string('sub_title');
-            $table->longText('description');
-            $table->string('about_photo');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            $table->string('mission_text')->nullable();
+            $table->string('mission_image')->nullable();
+            $table->string('vission_text')->nullable();
+            $table->string('vission_image')->nullable();
+            $table->string('values_text')->nullable();
+            $table->string('values_image')->nullable();
             $table->timestamps();
         });
     }

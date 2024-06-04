@@ -28,7 +28,7 @@
                             <h4>Ideal for Business</h4>
                             <h5>Quisque eu ante at tortor imperdiet gravida nec sed turpis phasellus.</h5>
                         </div>
-                    </div> s
+                    </div> 
                 </div>
             </div>
         </section>

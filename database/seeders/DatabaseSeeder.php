@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ContactsTableSeeder::class,
             UserTableSeeder::class,
             SliderVideoSeeder::class,
+            AboutsTableSeeder::class,
         ]);
     }
 }

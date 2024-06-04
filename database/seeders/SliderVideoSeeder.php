@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Slider;
 
 class SliderVideoSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class SliderVideoSeeder extends Seeder
         Slider::create([
             'slider_title' => 'a bootstrap website template for business',
             'slider_photo' => '1.mp4', 
-            'status' => rand(1), 
+            'status' => 1, 
             'created_at' => now(),
             'updated_at' => now(),
         ]);

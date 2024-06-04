@@ -51,11 +51,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/slider/delete/{slider_id}', [SliderController::class,'sliderdelete']);
     
     //about controller routes
-    Route::get('/about',  [AboutController::class,'about'])->name('about');
-    Route::post('/about/insert', [AboutController::class,'aboutinsert'])->name('aboutinsert');
-    Route::get('/about/edit/{about_id}', [AboutController::class,'aboutedit']);
-    Route::post('/about/edit/{id}', [AboutController::class,'aboutupdate']);
-    Route::get('/about/delete/{about_id}', [AboutController::class,'aboutdelete']);
+    Route::get('/about',  [AboutController::class,'about'])->name('about'); 
+    Route::get('/about/edit', [AboutController::class,'aboutedit'])->name('aboutedit');
+    Route::post('/about/edit', [AboutController::class,'aboutupdate']); 
     
     //service controller routes
     Route::get('/service',  [ServiceController::class,'service'])->name('service');

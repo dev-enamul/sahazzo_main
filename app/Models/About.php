@@ -10,10 +10,14 @@ class About extends Model
     use HasFactory; 
 
     protected $fillable = [
-        'heading',
-        'sub_title',
         'description',
-        'about_photo',
+        'image',
+        'mission_text',
+        'mission_image',
+        'vission_text',
+        'vission_image',
+        'values_text',
+        'values_image',
     ];
     
 }

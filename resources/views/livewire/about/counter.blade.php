@@ -1,4 +1,4 @@
-<section class="bg-white" id="counterUp">
+<section class="bg-gray" id="counterUp">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
