@@ -52,11 +52,11 @@ class AboutController extends Controller
             $request->validate([
                 'description' => 'required',
                 'mission_text' => 'required',
-                'mission_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'mission_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'vission_text' => 'required',
-                'vission_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'vission_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'values_text' => 'required',
-                'values_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'values_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'new_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
          
@@ -76,19 +76,36 @@ class AboutController extends Controller
                 $about->image = $newImageName;
             }
          
-            $missionImageName = $this->uploadImage($request->file('mission_image'), 'mission');
-            $vissionImageName = $this->uploadImage($request->file('vission_image'), 'vission');
-            $valuesImageName = $this->uploadImage($request->file('values_image'), 'values');
-         
+            if ($request->hasFile('mission_image')){
+                $missionImageName = $this->uploadImage($request->file('mission_image'), 'mission');
+                $about->mission_image = $missionImageName;
+            }
+
+            if ($request->hasFile('vission_image')){
+                $vissionImageName = $this->uploadImage($request->file('vission_image'), 'vission');
+                $about->vission_image = $vissionImageName;
+            }
+
+            if ($request->hasFile('values_image')){
+                $valuesImageName = $this->uploadImage($request->file('values_image'), 'values');
+                $about->values_image = $valuesImageName; 
+            }
+
+            if ($request->hasFile('company_logo')){
+                $logo = $this->uploadImage($request->file('company_logo'), 'logo');
+                $about->company_logo = $logo; 
+            }
+
+            if ($request->hasFile('fav_icon')){
+                $fav_icon = $this->uploadImage($request->file('fav_icon'), 'fav');
+                $about->fav_icon = $fav_icon; 
+            }  
             $about->description = $request->description;
-            $about->mission_text = $request->mission_text;
-            $about->mission_image = $missionImageName;
-            $about->vission_text = $request->vission_text;
-            $about->vission_image = $vissionImageName;
-            $about->values_text = $request->values_text;
-            $about->values_image = $valuesImageName; 
-            $about->save();
-         
+            $about->mission_text = $request->mission_text; 
+            $about->vission_text = $request->vission_text; 
+            $about->values_text = $request->values_text; 
+            $about->company_name = $request->company_name;   
+            $about->save(); 
             return redirect()->route('about')->withEditstatus('About Edited successfully!!');
         }
 

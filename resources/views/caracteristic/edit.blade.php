@@ -9,7 +9,7 @@
                     Edit Client
                 </div>
                 <div class="card-body"> 
-                    <form method="post" action="{{ url('admin/caracteristic/edit') }}/{{ $caracteristic->id }}">
+                    <form method="post" action="{{ url('admin/caracteristic/update') }}/{{ $caracteristic->id }}">
                         @csrf
                         <div class="form-group">
                             <label>Icon [ <a target="blank" href="https://fontawesome.com/v4/icons/">Icon Link</a> ]</label>
@@ -29,7 +29,7 @@
 
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control"  value="{{$caracteristic->description}}"  name="description"></textarea>
+                            <textarea class="form-control"   name="description">{{$caracteristic->description}}</textarea>
                             @error('description')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

@@ -23,7 +23,7 @@ class Blog extends Component
         if($this->service_id!=null){
             $blogs = BlogPost::where('status',1)->where('service_id',$this->service_id)->paginate(1);
         }else{
-            $blogs = BlogPost::where('status',1)->paginate(1);
+            $blogs = BlogPost::where('status',1)->paginate(10);
         }
 
         return view('livewire.blog',['blogs' => $blogs]);

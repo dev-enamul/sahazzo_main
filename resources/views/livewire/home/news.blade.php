@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title-r">
-                            <h2>Latest News</h2>
+                            <h2>Latest Blogs</h2>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -22,7 +22,7 @@
                                         </div>
                                     </a>
                                     <h4><a href="{{ url('blog-details',$blog->slug) }}">{{$blog->title}}</a></h4>
-                                    <p>{{ \Illuminate\Support\Str::limit($blog->short_description, 190) }}</p>
+                                    <p>{{ \Illuminate\Support\Str::limit($blog->short_description, 180) }}</p>
                                     <p class="author">
                                     <i class="fa fa-calendar"></i>
                                         {{get_date($blog->updated_at)}}<span>/</span> BY <a href="#!"><strong>Admin</strong></a>  </a>

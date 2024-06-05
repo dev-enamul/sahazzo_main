@@ -19,7 +19,8 @@ class About extends Model
         'values_text',
         'values_image',
         'company_name',
-        'company_logo'
+        'company_logo',
+        'fav_icon'
     ];
     
 }

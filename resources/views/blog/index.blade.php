@@ -53,8 +53,8 @@
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $blog->service->title }}</td>
                                 <td>{{ $blog->title }}</td>
-                                <td>{{ $blog->short_description }}</td> 
-                                <td>{{ $blog->description }} </td>
+                                <td>{{ \Illuminate\Support\Str::limit($blog->short_description, 100) }}</td> 
+                                <td> {{ \Illuminate\Support\Str::limit($blog->description, 200) }}</td>
                                 <td>
                                     <img width="80" height="60" src="{{ asset('uploads/blog_photos') }}/{{ $blog->blog_photo }}" alt="not found">
                                 </td>

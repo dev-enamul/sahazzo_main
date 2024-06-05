@@ -27,8 +27,8 @@
                                     </p>
                             </header>
                             <div class="post_content">
-                                <p>{{$blog->short_description}}</p> 
-                                <p>{{$blog->description}}</p> 
+                                <p>{!!$blog->short_description!!}</p> 
+                                <p>{!!$blog->description!!}</p> 
                             </div> 
                         </article> 
                         <ul class="pagination mt10">

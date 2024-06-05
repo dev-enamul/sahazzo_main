@@ -47,6 +47,14 @@
                             </tr>
 
                             <tr> 
+                                <td>Fav Icon</td>
+                                <td>
+                                    <img id="image" src="{{ asset('uploads/about_photos/') }}/{{ @$about->fav_icon }}" alt="not found"  width="150px">
+                                </td> 
+                                
+                            </tr>
+
+                            <tr> 
                                 <td>About Image</td>
                                 <td>
                                     <img id="image" src="{{ asset('uploads/about_photos/') }}/{{ @$about->image }}" alt="not found"  width="150px">

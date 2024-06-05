@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('company_name')->nullable();
+            $table->string('company_logo')->nullable();
+            $table->string('fav_icon')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('mission_text')->nullable();
@@ -20,9 +23,7 @@ return new class extends Migration
             $table->string('vission_text')->nullable();
             $table->string('vission_image')->nullable();
             $table->string('values_text')->nullable();
-            $table->string('values_image')->nullable();
-            $table->string('company_name')->nullable();
-            $table->string('company_logo')->nullable();
+            $table->string('values_image')->nullable(); 
             $table->timestamps();
         });
     }

@@ -11,6 +11,46 @@
                 <div class="card-body"> 
                     <form method="post" action="{{ url('admin/about/edit') }}" enctype="multipart/form-data">
                         @csrf 
+
+                        <div class="form-group">
+                            <label>Company Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" value="{{$about->company_name}}" name="company_name" id="">
+                            @error('description')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label>Company Logo <span class="text-danger">[150x150 px]</span></label>
+                                    <input type="file" class="form-control" name="company_logo" onchange="document.getElementById('company_logo').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Logo Photo<span class="text-danger">*</span></label><br>
+                                    <img id="company_logo" src="{{ asset('uploads/about_photos') }}/{{ @$about->company_logo }}" alt="not found" width="100%">
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label>Fav Icon <span class="text-danger">[32x32 px]</span></label>
+                                    <input type="file" class="form-control" name="fav_icon" onchange="document.getElementById('fav_icon').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Fav Photo<span class="text-danger">*</span></label><br>
+                                    <img id="fav_icon" src="{{ asset('uploads/about_photos') }}/{{ @$about->fav_icon }}" alt="not found" width="100%">
+                                </div>
+                            </div>  
+                        </div>
+
+
                         <div class="form-group">
                             <label>Description<span class="text-danger">*</span></label>
                             <textarea required class="form-control" name="description" rows="6">{{ @$about->description }}</textarea>
@@ -21,8 +61,8 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
-                                    <label>About Photo<span class="text-danger">*</span></label>
-                                    <input required type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                    <label>About Photo <span class="text-danger">[150x150 px]</span></label>
+                                    <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -45,8 +85,8 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
-                                    <label>Mission Image<span class="text-danger">*  [350 × 128 px]</span></label>
-                                    <input required type="file" class="form-control" name="mission_image" onchange="document.getElementById('mission_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                    <label>Mission Image<span class="text-danger">  [350 × 128 px]</span></label>
+                                    <input type="file" class="form-control" name="mission_image" onchange="document.getElementById('mission_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -70,8 +110,8 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="form-group">
-                                    <label>Vission Image<span class="text-danger">* [350 × 128 px]</span></label>
-                                    <input required type="file" class="form-control" name="vission_image" onchange="document.getElementById('vission_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                    <label>Vission Image<span class="text-danger"> [350 × 128 px]</span></label>
+                                    <input  type="file" class="form-control" name="vission_image" onchange="document.getElementById('vission_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -95,7 +135,7 @@
                             <div class="col-md-10">
                                 <div class="form-group">
                                     <label>Values Image<span class="text-danger">* [350 × 128 px]</span></label>
-                                    <input required type="file" class="form-control" name="values_image" onchange="document.getElementById('values_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
+                                    <input type="file" class="form-control" name="values_image" onchange="document.getElementById('values_image').src = window.URL.createObjectURL(this.files[0]);"><br>  
                                 </div>
                             </div>
                             <div class="col-md-2">
