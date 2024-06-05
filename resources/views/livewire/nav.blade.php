@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg position-fixed navbar-fixed-top navbar-default w-100"> 
     <div class="container">
         <!-- Change your logo here -->
-        <a class="navbar-brand" href="/"><img src="{{asset('website/assets/img/logo.png')}}" alt="Logo"></a>
+        <a class="navbar-brand" href="/"><img src="{{asset('uploads/about_photos/'.$logo)}}" alt="Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>

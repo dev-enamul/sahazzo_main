@@ -18,6 +18,8 @@ class About extends Model
         'vission_image',
         'values_text',
         'values_image',
+        'company_name',
+        'company_logo'
     ];
     
 }

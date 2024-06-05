@@ -6,7 +6,7 @@
                     {{$link->title}}
                 </h1>
                 <p class="lead mt30">{{$link->subtitle}}</p>
-                <p><a href="{{$link->btn_link}}"  wire:navigate.hover class="btn btn-primary-corp-big btn-secondary"><i class="fa fa-shopping-cart le"></i> {{$link->btn_text}}</a></p>
+                <p><a href="{{$link->btn_link}}"  wire:navigate.hover class="btn btn-primary-corp-big btn-secondary">{{$link->btn_text}}</a></p>
             </div>
         </div>
     </div>

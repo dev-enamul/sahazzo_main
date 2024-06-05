@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('vission_image')->nullable();
             $table->string('values_text')->nullable();
             $table->string('values_image')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('company_logo')->nullable();
             $table->timestamps();
         });
     }

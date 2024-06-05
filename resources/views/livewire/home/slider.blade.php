@@ -9,7 +9,16 @@
             <div class="text-center wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <h2 class="titlepro">
                     <span class="upper">Welcome to</span>
-                    <span class="middle">Corpboot <strong>Template</strong></span>
+                    
+                    <span class="middle">
+                        @php
+                            $nameParts = explode(' ', config('app.name', 'Fallback Name'));
+                            $lastWord = array_pop($nameParts);
+                            $firstPart = implode(' ', $nameParts);
+                        @endphp
+                        {{ $firstPart }}
+                        <strong>{{ $lastWord }}</strong>
+                    </span>
                     <span class="bottom">{{$slider->slider_title}}</span>
                 </h2>
                 <a href="/contact" wire:navigate.hover class="btn btn-transparent"> Contact Us</a>

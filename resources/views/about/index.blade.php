@@ -35,6 +35,18 @@
                         </thead>
                         <tbody>
                             <tr> 
+                                <td>Company Name</td>
+                                <td>{!! $about->company_name !!}</td> 
+                            </tr>
+                            <tr> 
+                                <td>Company Logo</td>
+                                <td>
+                                    <img id="image" src="{{ asset('uploads/about_photos/') }}/{{ @$about->company_logo }}" alt="not found"  width="150px">
+                                </td> 
+                                
+                            </tr>
+
+                            <tr> 
                                 <td>About Image</td>
                                 <td>
                                     <img id="image" src="{{ asset('uploads/about_photos/') }}/{{ @$about->image }}" alt="not found"  width="150px">
