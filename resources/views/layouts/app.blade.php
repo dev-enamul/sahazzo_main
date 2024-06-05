@@ -39,10 +39,10 @@
                                 <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Home Page
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="nav-link" href="{{ route('home') }}">Home</a> 
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">  
                                 <a class="nav-link" href="{{ route('slider') }}">Slider</a>
                                 <a class="nav-link" href="{{ route('caracteristic') }}">Caracteristic</a>
+                                <a class="nav-link" href="{{ route('link') }}">Quick Link</a>
                                 </div>
                             </div>   
 

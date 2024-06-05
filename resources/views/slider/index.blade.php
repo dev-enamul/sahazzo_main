@@ -5,8 +5,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Slider
+                <div class="card-header d-flex justify-content-between">
+                   <span> Slider </span>
+
+                    <a href="{{ url('admin/slider/edit') }}/1" type="button" class="btn btn-primary">Edit</a>
+
                 </div>
                 <div class="card-body table-responsive">
                     @if (session('editstatus'))
@@ -30,8 +33,7 @@
                             <tr>
                                 <th>SL No</th>
                                 <th>Slider Title</th>
-                                <th>Slider Video</th>
-                                <th>Action</th>
+                                <th>Slider Video</th> 
                             </tr>
                         </thead>
                         <tbody>
@@ -42,13 +44,7 @@
                                 <td>
                                     <!-- <img width="80" height="60" src="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}" alt="not found"> -->
                                     <a target="blank" href="{{ asset('uploads/slider_photos') }}/{{ $slider->slider_photo }}">Open Now</a>
-                                </td>
-                                <td>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{ url('admin/slider/edit') }}/{{ $slider->id }}" type="button" class="btn btn-primary">Edit</a>
-                                        <!-- <a href="{{ url('admin/slider/delete') }}/{{ $slider->id }}" type="button" class="btn btn-danger">Delete</a> -->
-                                    </div>
-                                </td>
+                                </td> 
                             </tr>
                             @empty
                             <tr>

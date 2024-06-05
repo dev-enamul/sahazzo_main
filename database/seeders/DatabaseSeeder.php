@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             SliderVideoSeeder::class,
             AboutsTableSeeder::class,
+            QuickLinkSeeder::class,
         ]);
     }
 }

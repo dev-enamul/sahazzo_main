@@ -19,6 +19,7 @@ use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\CaracteristicController;
+use App\Http\Controllers\QuickLinkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/caracteristic/edit/{id}', [CaracteristicController::class,'edit'])->name('caracteristic.edit');
     Route::post('/caracteristic/update/{id}', [CaracteristicController::class,'update'])->name('caracteristic.update');
     Route::get('/caracteristic/delete/{id}', [CaracteristicController::class,'delete'])->name('caracteristic.delete');
+
+    // Quick Link 
+    Route::get('/link', [QuickLinkController::class,'index'])->name('link'); 
+    Route::get('/link/edit', [QuickLinkController::class,'edit'])->name('link.edit');
+    Route::post('/link/update', [QuickLinkController::class,'update'])->name('link.update'); 
 
     
     //service controller routes
