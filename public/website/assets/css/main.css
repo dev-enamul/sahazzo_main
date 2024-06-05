@@ -4147,7 +4147,7 @@ input:focus, textarea:focus, select:focus, button:focus, .btn:focus {
   margin: 0 !important;
 }
 .social li .fa {
-  margin-top: 35px;
+  margin-top: 0px;
   display: inline-block;
   color: rgba(238, 243, 245, 0.9);
   background-color: rgba(0, 0, 0, 0.07);
