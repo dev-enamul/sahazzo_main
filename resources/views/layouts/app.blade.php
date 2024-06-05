@@ -34,16 +34,29 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">Home</a>
-                            </li>
-                            <li class="nav-item">
+                        @auth 
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Home Page
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="nav-link" href="{{ route('home') }}">Home</a> 
                                 <a class="nav-link" href="{{ route('slider') }}">Slider</a>
-                            </li>
-                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('caracteristic') }}">Caracteristic</a>
+                                </div>
+                            </div>   
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    About Page
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="nav-link" href="{{ route('about') }}">About us</a>
-                            </li>
+                                <a class="nav-link" href="{{ route('faq') }}">FAQ</a>
+                                <a class="nav-link" href="{{ route('team') }}">Team</a>
+                                <a class="nav-link" href="{{ route('counter') }}">Counter</a>
+                                </div>
+                            </div> 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('service') }}">Services</a>
                             </li>
@@ -66,11 +79,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
-                            </li> 
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('team') }}">Team</a>
-                            </li> 
+                            </li>  
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>

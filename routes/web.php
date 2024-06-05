@@ -16,6 +16,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\BlogController; 
 use App\Http\Controllers\CVController; 
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\CounterController;
+use App\Http\Controllers\CaracteristicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +56,30 @@ Route::prefix('admin')->group(function () {
     //about controller routes
     Route::get('/about',  [AboutController::class,'about'])->name('about'); 
     Route::get('/about/edit', [AboutController::class,'aboutedit'])->name('aboutedit');
-    Route::post('/about/edit', [AboutController::class,'aboutupdate']); 
+    Route::post('/about/edit', [AboutController::class,'aboutupdate']);
+
+    // Faq 
+    Route::get('/faq', [FaqController::class,'faq'])->name('faq');
+    Route::post('/faq/store', [FaqController::class,'store'])->name('faq.store');
+    Route::get('/faq/edit/{id}', [FaqController::class,'edit'])->name('faq.edit');
+    Route::post('/faq/update/{id}', [FaqController::class,'update'])->name('faq.update');
+    Route::get('/faq/delete/{id}', [FaqController::class,'delete'])->name('faq.delete');
+
+
+    // Counter 
+    Route::get('/counter', [CounterController::class,'counter'])->name('counter');
+    Route::post('/counter/store', [CounterController::class,'store'])->name('counter.store');
+    Route::get('/counter/edit/{id}', [CounterController::class,'edit'])->name('counter.edit');
+    Route::post('/counter/update/{id}', [CounterController::class,'update'])->name('counter.update');
+    Route::get('/counter/delete/{id}', [CounterController::class,'delete'])->name('counter.delete'); 
+
+    // caracteristic 
+    Route::get('/caracteristic', [CaracteristicController::class,'caracteristic'])->name('caracteristic');
+    Route::post('/caracteristic/store', [CaracteristicController::class,'store'])->name('caracteristic.store');
+    Route::get('/caracteristic/edit/{id}', [CaracteristicController::class,'edit'])->name('caracteristic.edit');
+    Route::post('/caracteristic/update/{id}', [CaracteristicController::class,'update'])->name('caracteristic.update');
+    Route::get('/caracteristic/delete/{id}', [CaracteristicController::class,'delete'])->name('caracteristic.delete');
+
     
     //service controller routes
     Route::get('/service',  [ServiceController::class,'service'])->name('service');

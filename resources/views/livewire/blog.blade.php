@@ -27,8 +27,8 @@
                                     </p>
                                 </header>
                                 <div class="post_content">
-                                    <p>Sed posuere malesuada ante, a gravida ipsum congue id. Cras tempus libero sit amet mauris blandit laoreet. Vestibulum ac enim vel tellus pharetra pellentesque vitae vitae lacus. Etiam consequat hendrerit congue. Proin commodo metus ac augue adipiscing, ac aliquet eros posuere. Donec dignissim ullamcorper cursus. Cras eget quam volutpat, luctus nunc vel, euismod felis. Nunc ultrices euismod consequat. Suspendisse id augue ut diam pharetra ultrices blandit sed lectus...</p>
-                                    <a href="blogpost-left.html" class="btn btn-primary-corp"><i class="fa fa-plus"></i> READ MORE</a>
+                                    <p>{{ \Illuminate\Support\Str::limit($blog->short_description, 450) }}</p>
+                                    <a href="{{ url('blog-details',$blog->slug) }}" wire:navigate.hover class="btn btn-primary-corp"><i class="fa fa-plus"></i> READ MORE</a>
                                 </div>
                             </article>
                             <hr>   

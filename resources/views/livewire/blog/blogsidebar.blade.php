@@ -14,7 +14,7 @@
         <h2>Blog Categories</h2>
         <ul class="list-unstyled">
             @foreach($categoris as $category)
-            <li><a href="?service_id={{$category->id}}" wire:navigate.hover>{{$category->title}} <span class="badge">{{@$category?->blogs?->count()}}</span></a>
+            <li><a href="{{url('/blog')}}?service={{$category->id}}" wire:navigate.hover>{{$category->title}} <span class="badge">{{@$category?->blogs?->count()}}</span></a>
             </li> 
             @endforeach
         </ul>
