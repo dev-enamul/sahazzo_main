@@ -1,5 +1,13 @@
+@push('title') 
+    Architectural Insights | Explore Our Blog
+ @endpush 
+
+@push('description') 
+    Dive into the world of architecture with our insightful blog at MARS Planning and Engineering. From industry trends to design tips, our blog covers a wide range of topics to inspire and educate. Stay informed and discover new ideas for your architectural projects.
+@endpush
+
 <div>
-    <livewire:common.breadcrumb />
+    <livewire:common.breadcrumb name="BLog"/>
     <section class="bg-white">
         <div class="container">
             <div id="content" class="row">

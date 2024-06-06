@@ -1,5 +1,13 @@
+@push('title') 
+    Submit Your CV | Join Our Team
+ @endpush 
+
+@push('description') 
+    Interested in joining the team at MARS Planning and Engineering? Submit your CV here and take the first step towards a rewarding career in architectural design. We're always looking for talented individuals to contribute to our innovative projects.
+@endpush
+
 <div>
-    <livewire:common.breadcrumb />
+    <livewire:common.breadcrumb name="Career"/>
     <section class="bg-white">
         <div class="container">
             <div class="row wow fadeIn">

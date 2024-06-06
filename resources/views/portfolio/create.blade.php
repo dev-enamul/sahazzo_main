@@ -55,7 +55,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label>Photo <span class="text-danger">*</span></label>
+                            <label>Photo <span class="text-danger">* [540 × 281 px]</span>  </label>
                             <input type="file" class="form-control" name="portfolio_photo" required>
                             @error('portfolio_photo')
                             <span class="text-danger">{{ $message }}</span>

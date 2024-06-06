@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('seos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('service_id');
-            $table->string('slug');
-            $table->string('title');
-            $table->text('short_description');
-            $table->text('description');
-            $table->string('portfolio_photo');
+            $table->string('key');
+            $table->text('value');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portfolios');
+        Schema::dropIfExists('seos');
     }
 };

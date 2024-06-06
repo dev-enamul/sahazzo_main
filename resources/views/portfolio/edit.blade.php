@@ -58,12 +58,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label>About Photo</label><br>
+                            <label>New Photo</label><br>
                             <img id="new_image" src="{{ asset('uploads/portfolio_photos') }}/{{ $portfolio_info->portfolio_photo }}" alt="not found" height="150" width="250">
                         </div>
 
                         <div class="form-group">
-                            <label>New Photo</label>
+                            <label>New Photo <span class="text-danger">[540 × 281 px]</span></label>
                             <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>
                         </div>
 

@@ -1,5 +1,13 @@
+@push('title') 
+{{$blog->title}}
+ @endpush 
+
+@push('description') 
+    {{strip_tags($blog->short_description)}}
+@endpush
+
 <div>
-<livewire:common.breadcrumb />
+<livewire:common.breadcrumb name="Blog"/>
 <section class="bg-white">
             <div class="container">
                 <div id="content" class="row">

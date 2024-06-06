@@ -20,6 +20,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\CaracteristicController;
 use App\Http\Controllers\QuickLinkController;
+use App\Http\Controllers\SeoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/link', [QuickLinkController::class,'index'])->name('link'); 
     Route::get('/link/edit', [QuickLinkController::class,'edit'])->name('link.edit');
     Route::post('/link/update', [QuickLinkController::class,'update'])->name('link.update'); 
+
+    // Quick Link 
+    Route::get('/seo', [SeoController::class,'index'])->name('seo'); 
+    Route::get('/seo/edit', [SeoController::class,'edit'])->name('seo.edit');
+    Route::post('/seo/update', [SeoController::class,'update'])->name('seo.update'); 
 
     
     //service controller routes

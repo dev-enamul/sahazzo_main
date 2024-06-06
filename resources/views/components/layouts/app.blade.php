@@ -1,17 +1,26 @@
  
 <!DOCTYPE html>
 <html lang="en">
-    
-
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content>
-        <meta name="author" content>
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
-        <title>{{ $title ?? 'Page Title' }}</title>
- 
+        <title>@stack('title') | {{config('app.name')}}</title>
+        <link rel="icon" type="image/png" href="{{ asset('uploads/about_photos/fav_icon.png') }}">
+        <meta name="description" content="@stack('description')">
+        
+
+        <!-- Facebook Open Graph Meta Tags -->
+        <meta property="og:title" content="@stack('title')">
+        <meta property="og:description" content="@stack('description')">
+        <meta property="og:image" content="{{ asset('uploads/about_photos/og.png') }}">
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="@stack('title')">
+        <meta name="twitter:description" content="@stack('description')">
+        <meta name="twitter:image" content="{{ asset('uploads/about_photos/og.png') }}">
+  
         <link rel="stylesheet" href="{{ asset('website/css/bootstrap.min.css') }}">
         <!-- Icons -->
         <link rel="stylesheet" href="{{ asset('website/assets/css/font-awesome.min.css') }}">
@@ -29,36 +38,12 @@
         <link rel="stylesheet" href="{{ asset('website/assets/css/main.css') }}" id="theme">
         <!-- Change color theme -->
         <link rel="stylesheet" href="{{ asset('website/style-switcher.css') }}">
-        
-
-        <!-- JAVASCRIPT
-        ===============================================================-->
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVXK7E41MJ"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-LVXK7E41MJ');
-        </script>
+         
+     
     </head>
 
     <body> 
-        <!-- <div id="preloader">
-            <div class="cssload-container">
-                <div class="cssload-double-torus"></div>
-            </div>
-        </div>   -->
-
-        <!-- @include('components/imports/color_switcher') -->
-        <!-- NAVBAR
-        ===============================================================--> 
+      
     
         @livewire('nav')
         {{ $slot }} 

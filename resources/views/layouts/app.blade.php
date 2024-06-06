@@ -40,9 +40,10 @@
                                     Home Page
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">  
-                                <a class="nav-link" href="{{ route('slider') }}">Slider</a>
-                                <a class="nav-link" href="{{ route('caracteristic') }}">Caracteristic</a>
-                                <a class="nav-link" href="{{ route('link') }}">Quick Link</a>
+                                    <a class="nav-link" href="{{ route('slider') }}">Slider</a>
+                                    <a class="nav-link" href="{{ route('caracteristic') }}">Caracteristic</a>
+                                    <a class="nav-link" href="{{ route('link') }}">Quick Link</a>
+                                    <a class="nav-link" href="{{ route('client') }}">Clients</a>
                                 </div>
                             </div>   
 
@@ -71,10 +72,6 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('blog') }}">Blog</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('client') }}">Clients</a>
                             </li> 
 
                             <li class="nav-item">
@@ -92,6 +89,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cv') }}">CV</a>
                             </li>
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="{{ route('seo') }}">SEO</a>
+                            </li> -->
                         @endauth
                     </ul>
 

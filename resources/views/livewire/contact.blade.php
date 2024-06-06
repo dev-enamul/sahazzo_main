@@ -1,5 +1,13 @@
+@push('title') 
+    Get in Touch 
+ @endpush 
+
+@push('description') 
+    Have questions or inquiries? Contact MARS Planning and Engineering today. Our team is here to assist you with all your architectural design needs. Reach out to us for consultations, project inquiries, or any other information you require. We look forward to hearing from you!
+@endpush
+
 <div >
-<livewire:common.breadcrumb />
+<livewire:common.breadcrumb name="Contact Us"/>
 <section class="bg-white">
     <div class="container">
         <div class="row wow fadeIn">

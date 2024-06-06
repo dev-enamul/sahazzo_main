@@ -1,5 +1,13 @@
+@push('title') 
+    {{$project->title}}
+ @endpush 
+
+@push('description') 
+{{strip_tags($project->short_description)}}
+@endpush
+
 <div>
-<livewire:common.breadcrumb />
+<livewire:common.breadcrumb name="Project"/>
 <section id="portfolio-section" class="bg-white">
     <div class="container">
         <div class="row">
@@ -34,6 +42,7 @@
             </div> 
             <div class="col-md-12"> 
                 <div id="grid" class="row text-center">
+                    @foreach($galleris as $gallery)
                     <div class="col-sm-4 mix webdesign">
                         <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port1.jpg">
                             <div class="item-img-wrap">
@@ -46,111 +55,9 @@
                                 </div>
                             </div>
                         </a>
-                    </div><!-- /work col -->
-                    <div class="col-sm-4 mix wordpress bootstrap">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port2.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port2.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                    <div class="col-sm-4 mix webdesign responsive">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port3.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port3.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                    <div class="col-sm-4 mix responsive bootstrap">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port4.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port4.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                        <div class="col-sm-4 mix wordpress webdesign">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port5.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port5.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                        <div class="col-sm-4 mix responsive bootstrap">
-                            <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port6.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port6.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                        <div class="col-sm-4 mix webdesign wordpress">
-                            <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port7.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port7.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                        <div class="col-sm-4 mix wordpress webdesign">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port8.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port8.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
-                        <div class="col-sm-4 mix responsive bootstrap">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port9.jpg">
-                            <div class="item-img-wrap">
-                                <img src="assets/img/port9.jpg" class="img-fluid" alt="template">
-                                <div class="item-img-overlay">
-                                    <div>
-                                        <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- /work col -->
+                    </div>  
+                    @endforeach
+
                 </div><!-- /row -->
             </div>
         </div><!-- /row -->

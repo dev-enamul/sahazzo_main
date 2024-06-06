@@ -1,5 +1,12 @@
+@push('title') 
+{{$service->title}}
+ @endpush 
+
+@push('description') 
+    {{strip_tags($service->short_description)}}
+@endpush
 <div>
-<livewire:common.breadcrumb />
+<livewire:common.breadcrumb name="Service"/>
     <section id="portfolio-section" class="bg-white">
         <div class="container">
             <div class="row">

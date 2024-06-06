@@ -1,5 +1,13 @@
+@push('title') 
+    Our Projects | Explore Our Architectural Design Portfolio
+ @endpush 
+
+@push('description') 
+    Explore a showcase of our architectural design projects at MARS Planning and Engineering. From residential homes to commercial complexes, dive into our diverse portfolio and discover the innovative solutions we've implemented. Get inspired for your next project with our successful endeavors.
+@endpush
+
 <div>
-    <livewire:common.breadcrumb />
+    <livewire:common.breadcrumb name="Project"/>
     <section id="portfolio-section" class="bg-white">
     <div class="container">
         <div class="row">
