@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Photo <span class="text-danger">*</span></label>
+                            <label>Service Photo <span class="text-danger">*[540*280]</span></label><br>
                             <input type="file" class="form-control" name="services_photo" required>
                             @error('services_photo')
                                 <span class="text-danger">{{ $message }}</span>

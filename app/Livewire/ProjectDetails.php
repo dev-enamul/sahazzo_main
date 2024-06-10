@@ -4,11 +4,12 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Portfolio;
+use App\Models\Gallery;
 
 class ProjectDetails extends Component
 {
-    public $project;
-    public $galleris;
+    public $project = [];
+    public $galleris = [];
     public function mount($slug){
         $this->project = Portfolio::where('slug',$slug)->first();
         $this->galleris = Gallery::where('project_id',$this->project->id)->get();

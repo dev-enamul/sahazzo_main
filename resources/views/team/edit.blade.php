@@ -56,12 +56,12 @@
                             @enderror
                         </div> 
                         <div class="form-group">
-                            <label>New Photo</label>
+                            <label>New Photo <span class="text-danger">[255*255 px]</span></label>
                             <input type="file" class="form-control" name="new_image" onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);"><br>
                         </div>
 
                         <div class="form-group">
-                            <label>Team Photo</label><br>
+                        <label>Photo</label> <br>
                             <img id="new_image" src="{{ asset('uploads/team_photos') }}/{{ $team_info->tm_photo }}" alt="not found" height="150" width="250">
                         </div>
 

@@ -5168,3 +5168,7 @@ html[dir=rtl] .scrollToTop, html[dir=rtl] .whatsappButton {
   right: auto;
   left: 15px;
 }/*# sourceMappingURL=main.css.map */
+
+.team-name h4{
+  font-size:15px;
+}

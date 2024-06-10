@@ -1,0 +1,11 @@
+db_name = shahazzo_mars;
+user = shahazzo_mars
+pass = 8zu-ueo?$X[m
+
+db_name = 
+db_user = shahazzo_emart
+pass = bQ2]j39Ehp@A
+
+DB_DATABASE="shahazzo_main"
+DB_USERNAME="shahazzo_main"
+DB_PASSWORD="2jmFSdgNtSh;"

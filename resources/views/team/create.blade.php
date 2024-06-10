@@ -26,7 +26,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Photo</label>
+                            <label>Photo <span class="text-danger">[255*255 px]</span></label>
                             <input type="file" class="form-control" name="tm_photo">
                             @error('tm_photo')
                                 <span class="text-danger">{{ $message }}</span>

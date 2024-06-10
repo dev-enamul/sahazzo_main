@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Service Photo</label><br>
+                            <label>Service Photo <span class="text-danger">[540*280]</span></label><br>
                             <img id="new_image" src="{{ asset('uploads/service_photos') }}/{{ $service_info->services_photo }}" alt="not found" height="150" width="250">
                         </div>
 

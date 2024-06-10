@@ -59,7 +59,7 @@
 
                 
                 <div class="form-group">
-                    <label>Photo</label>
+                    <label>Photo <span class="text-danger">[540*280 px]</span></label>
                     <input type="file" class="form-control" name="blog_photo"  onchange="document.getElementById('new_image').src = window.URL.createObjectURL(this.files[0]);">
                 
                 </div> 

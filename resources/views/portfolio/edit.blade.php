@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>New Photo</label><br>
+                            <label>Project Photo</label><br>
                             <img id="new_image" src="{{ asset('uploads/portfolio_photos') }}/{{ $portfolio_info->portfolio_photo }}" alt="not found" height="150" width="250">
                         </div>
 
