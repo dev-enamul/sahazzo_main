@@ -21,6 +21,7 @@ use App\Http\Controllers\CounterController;
 use App\Http\Controllers\CaracteristicController;
 use App\Http\Controllers\QuickLinkController;
 use App\Http\Controllers\SeoController;
+use App\Http\Controllers\ServiceCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,7 +93,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/seo/edit', [SeoController::class,'edit'])->name('seo.edit');
     Route::post('/seo/update', [SeoController::class,'update'])->name('seo.update'); 
 
-    
+    // Service Category 
+    Route::get('/service-category',  [ServiceCategoryController::class,'index'])->name('service.category');
+    Route::get('/service-category/create',  [ServiceCategoryController::class,'create'])->name('service.category.create');
+    Route::post('/service-category/insert', [ServiceCategoryController::class,'store'])->name('service.category.store');
+    Route::get('/service-category/edit/{service_id}', [ServiceCategoryController::class,'edit'])->name('service.category.edit');
+    Route::post('/service-category/edit/{id}',[ServiceCategoryController::class,'update'])->name('service.category.update');
+    Route::get('/service-category/delete/{service_id}', [ServiceCategoryController::class,'destroy'])->name('service.category.delete');
+
     //service controller routes
     Route::get('/service',  [ServiceController::class,'service'])->name('service');
     Route::get('/service/create',  [ServiceController::class,'create'])->name('service.create');
@@ -100,6 +108,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/service/edit/{service_id}', [ServiceController::class,'serviceedit']);
     Route::post('/service/edit/{id}',[ServiceController::class,'serviceupdate']);
     Route::get('/service/delete/{service_id}', [ServiceController::class,'servicedelete']);
+
+    
 
     Route::get('/gallery',  [GalleryController::class,'gallery'])->name('gallery');
     Route::get('/gallery/create',  [GalleryController::class,'create'])->name('gallery.create');
@@ -169,9 +179,12 @@ use App\Livewire\BlogDetails;
 use App\Livewire\Contact;
 use App\Livewire\JobApply;
 use App\Livewire\ProjectDetails;
+use App\Livewire\SubService;
+
 Route::get('/', Home::class);
 Route::get('/about-us', AboutUs::class);
 Route::get('/service/{slug}', Service::class);
+Route::get('/sub-service/{slug}', SubService::class);
 Route::get('/project', Project::class);
 Route::get('/project-details/{slug}', ProjectDetails::class);
 Route::get('/blog', Blog::class);

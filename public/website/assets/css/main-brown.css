@@ -2485,7 +2485,8 @@ a.accordion-toggle {
   -moz-transition: all 0.25s linear;
   -ms-transition: all 0.25s linear;
   -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
+  transition: all 0.25s linear; 
+ 
 }
 .item-img-overlay div h5 {
   width: 100%;

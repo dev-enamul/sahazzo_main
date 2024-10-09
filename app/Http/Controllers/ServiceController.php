@@ -6,6 +6,7 @@ use App\Http\Requests\ServiceValidation;
 use Image;
 use File;
 use App\Models\Service;
+use App\Models\ServiceCategory;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,8 @@ class ServiceController extends Controller
     }
 
     public function create(){
-    return view('service.create');
+        $categories = ServiceCategory::all();
+        return view('service.create',compact('categories'));
     }
 
     function serviceinsert(ServiceValidation $request)
@@ -40,15 +42,15 @@ class ServiceController extends Controller
             move_uploaded_file($services_photo->getPathname(), $save_location); 
             $info->services_photo = $new_name;
             $info->save();
-        }
-        
+        } 
         return redirect()->route('service')->with('status', 'Service insert successfully!!');
     }
 
     function serviceedit($service_id)
     {
+        $categories = Service::all();
         $service_info =  Service::findorFail($service_id);
-       return view('service.edit' , compact('service_info'));
+        return view('service.edit' , compact('service_info','categories'));
     }
 
     function serviceupdate(Request $request, $id)
@@ -58,8 +60,7 @@ class ServiceController extends Controller
                 $service_photo = $request->file('new_image');
                 $new_name = $id . "." . $service_photo->getClientOriginalExtension();
                 $save_location = public_path("uploads/service_photos/" . $new_name);
-
-                // Move the uploaded file to the desired location
+ 
                 move_uploaded_file($service_photo->getPathname(), $save_location);
 
                 Service::findOrFail($id)->update([

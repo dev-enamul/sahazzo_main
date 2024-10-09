@@ -18,7 +18,20 @@
                     </div>
                     @endif
                     <form method="post" action="{{ route('serviceinsert') }}" enctype='multipart/form-data'>
-                        @csrf
+                        @csrf 
+
+                        <div class="form-group">
+                            <label for="category_id">Category <span class="text-danger">*</span></label> 
+                            <select class="form-control" name="category_id" id="category_id">
+                                @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach
+                            </select>
+                            @error('heading')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label>Title <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="title" required>

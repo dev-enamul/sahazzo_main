@@ -57,10 +57,19 @@
                                 <a class="nav-link" href="{{ route('team') }}">Team</a>
                                 <a class="nav-link" href="{{ route('counter') }}">Counter</a>
                                 </div>
+                            </div>  
+
+                            <div class="dropdown">
+                                <a class="dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Service
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    {{-- <a class="nav-link" href="{{ route('service.category') }}">Service Category</a> --}}
+                                    <a class="nav-link" href="{{ route('service') }}">Service</a>           
+                                </div>
                             </div> 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('service') }}">Services</a>
-                            </li>
+
+                          
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('portfolio') }}">Project</a>

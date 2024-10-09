@@ -1,40 +1,12 @@
 @push('title') 
-{{$service_category->title}}
+{{$service->title}}
  @endpush  
-{{-- @push('description') 
+@push('description') 
     {{strip_tags($service->short_description)}}
-@endpush --}}
+@endpush
 <div>
-<livewire:common.breadcrumb name="Service"/>  
-<style>
-    .item-img-wrap div{
-        opacity: 1 !important;
-    }
-</style> 
-
-    <div class="col-md-12">
-        <!-- PORTFOLIO GRID -->
-        <div id="grid" class="row text-center">
-            @foreach ($services as $service)
-                <div class="col-sm-4 mix webdesign">
-                    <a title="Project Title" href="/sub-service/{{$service->slug}}" wire:navigate.hover>
-                        <div class="item-img-wrap">
-                            <img src="{{asset('/uploads/service_photos/'.$service->services_photo)}}" class="img-fluid" alt="template">
-                            <div class="item-img-overlay">
-                                <div>
-                                    <i class="fa fa-eye"></i>
-                                    <h5>{{$service->title}}</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach 
-        </div>
-    </div>
-
-
-    {{-- <section id="portfolio-section" class="bg-white">
+<livewire:common.breadcrumb name="Service"/>   
+    <section id="portfolio-section" class="bg-white">
         <div class="container">
             <div class="row">
                 <!-- Image -->
@@ -53,7 +25,7 @@
             {!!$service->description!!}
             </div>
         </div>
-    </section> --}}
+    </section>
 <livewire:home.quick-link />
 
 <section id="portfolio-section" class="bg-white">
@@ -85,6 +57,5 @@
                     </div>
                 </div><!-- /row -->
             </div><!-- /container -->
-        </section>
-
+        </section> 
 </div>

@@ -19,7 +19,20 @@
                     @endif
 
                     <form method="post" action="{{ url('admin/service/edit') }}/{{ $service_info->id }}" enctype="multipart/form-data">
-                        @csrf
+                        @csrf 
+
+                        <div class="form-group">
+                            <label for="category_id">Category <span class="text-danger">*</span></label> 
+                            <select class="form-control" name="category_id" id="category_id">
+                                @foreach ($categories as $category)
+                                    <option {{$category->id==$service_info->category_id?"selected":""}} value="{{$category->id}}">{{$category->title}}</option>
+                                @endforeach
+                            </select>
+                            @error('heading')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label>Title</label>
                             <input type="text" class="form-control" name="title" value="{{ $service_info->title }}">
