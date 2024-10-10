@@ -22,19 +22,16 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
-        $info = Gallery::create($request->except('_token'));
+        $info = Gallery::create($request->except('_token'));  
         if ($request->hasFile('gallery_photo')) {
             $client_photo = $request->file('gallery_photo');
             $new_name = $info->id . "." . $client_photo->getClientOriginalExtension();
             $save_location = public_path("uploads/gallery_photos/" . $new_name);
-
-            // Move the uploaded file to the desired location
-            move_uploaded_file($client_photo->getPathname(), $save_location);
-
-            // Update the client with the new image name
-            $info->gallery_photo = $new_name;
-            $info->save();
+ 
+            move_uploaded_file($client_photo->getPathname(), $save_location); 
+            $info->gallery_photo = $new_name;   
         }
+        $info->save();
         return back()->with('status', 'Client insert successfully!!');
     }
 

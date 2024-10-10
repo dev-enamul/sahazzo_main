@@ -18,8 +18,8 @@
                 <!-- PORTFOLIO NAV -->
                 <ul class="portfolio-filters list-inline">
                     <li class="filter active list-inline-item" data-filter="all">All</li>
-                    @foreach($services as $service)
-                        <li class="filter list-inline-item" data-filter="service_{{$service->id}}">{{$service->title}}</li> 
+                    @foreach($categories as $category)
+                        <li class="filter list-inline-item" data-filter="service_{{$category->id}}">{{$category->title}}</li> 
                     @endforeach
                 </ul>
             </div>
@@ -27,7 +27,7 @@
                 <!-- PORTFOLIO GRID -->
                 @foreach($projects as $project)
                     <div id="grid" class="row text-center">
-                        <div class="col-sm-4 mix service_{{$project->service_id}}">
+                        <div class="col-sm-4 mix service_{{$project->service->category_id}}">
                             <a title="Project Title" href="{{url('project-details/')}}/{{$project->slug}}">
                                 <div class="item-img-wrap">
                                     <img src="{{ asset('uploads/portfolio_photos') }}/{{ $project->portfolio_photo }}" class="img-fluid" alt="template">

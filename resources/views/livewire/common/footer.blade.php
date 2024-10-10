@@ -13,7 +13,7 @@
                     <div class="visible-xs-block visible-sm-block pt20"></div>
                 </div>
                 <div class="footer-widget col-sm-6 col-md-6 col-lg-4">
-                    <h3>Photo Gallery</h3>
+                    <h3>Quick Link</h3>
                     <a href="{{ asset('website/assets/img/gall1.jpg') }}">
                         About Us
                     </a>

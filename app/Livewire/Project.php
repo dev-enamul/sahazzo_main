@@ -5,14 +5,16 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Service;
 use App\Models\Portfolio;
+use App\Models\ServiceCategory;
+
 class Project extends Component
 {
 
-    public $services; 
+    public $categories; 
     public $projects;
 
     public function mount(){
-        $this->services = Service::all();
+        $this->categories = ServiceCategory::all();
         $this->projects = Portfolio::all();
     }
 

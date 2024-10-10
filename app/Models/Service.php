@@ -20,4 +20,8 @@ class Service extends Model
     public function blogs(){
         return $this->hasMany(Blog::class);
     }
+
+    public function category(){
+        return $this->hasMany(ServiceCategory::class);
+    }
 }

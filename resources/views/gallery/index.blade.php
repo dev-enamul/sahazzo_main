@@ -40,7 +40,7 @@
                             @forelse ($galleries as $gallery)
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
-                                <td>{{ $gallery->project->title }}</td>
+                                <td>{{ @$gallery->project->title }}</td>
                                 <td>{{ $gallery->title }}</td>
                                 <td>
                                     <img width="80" height="60" src="{{ asset('uploads/gallery_photos') }}/{{ $gallery->gallery_photo }}" alt="not found">
@@ -81,6 +81,7 @@
                         <div class="form-group">
                             <label>Select Project</label>
                             <select name="project_id" class="form-control">
+                                <option value="">General Photo</option>
                                 @foreach($projects as $project)
                                     <option value="{{$project->id}}">{{$project->title}}</option>
                                 @endforeach
