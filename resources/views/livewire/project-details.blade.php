@@ -44,13 +44,13 @@
                 <div id="grid" class="row text-center">
                     @foreach($galleris as $gallery)
                     <div class="col-sm-4 mix webdesign">
-                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="assets/img/port1.jpg">
+                        <a class="lightbox glightbox" data-type="image" data-draggable="true" title="Project Title" href="{{ asset('uploads/gallery_photos') }}/{{ $gallery->gallery_photo }}">
                             <div class="item-img-wrap">
-                                <img src="assets/img/port1.jpg" class="img-fluid" alt="template">
+                                <img src="{{ asset('uploads/gallery_photos') }}/{{ $gallery->gallery_photo }}" class="img-fluid" alt="template">
                                 <div class="item-img-overlay">
                                     <div>
                                         <i class="fa fa-eye"></i>
-                                        <h5>Project Title<br><small>HTML / CSS / JS</small></h5>
+                                        <h5>Project Title<br><small>{{$gallery->title}}</small></h5>
                                     </div>
                                 </div>
                             </div>

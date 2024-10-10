@@ -64,7 +64,7 @@
                                     Service
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    {{-- <a class="nav-link" href="{{ route('service.category') }}">Service Category</a> --}}
+                                    <a class="nav-link" href="{{ route('service.category') }}">Service Category</a>
                                     <a class="nav-link" href="{{ route('service') }}">Service</a>           
                                 </div>
                             </div> 
