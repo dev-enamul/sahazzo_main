@@ -3,7 +3,7 @@
  @endpush 
 
 @push('description') 
-    Have questions or inquiries? Contact MARS Planning and Engineering today. Our team is here to assist you with all your architectural design needs. Reach out to us for consultations, project inquiries, or any other information you require. We look forward to hearing from you!
+    Ready to embark on your digital journey? Connect with Shahazzo and experience the difference.
 @endpush
 
 <div >

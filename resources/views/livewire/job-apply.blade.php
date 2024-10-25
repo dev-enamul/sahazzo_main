@@ -1,9 +1,9 @@
 @push('title') 
-    Submit Your CV | Join Our Team
+    Join the Shahazzo Team: Build Your Future with Us
  @endpush 
 
 @push('description') 
-    Interested in joining the team at MARS Planning and Engineering? Submit your CV here and take the first step towards a rewarding career in architectural design. We're always looking for talented individuals to contribute to our innovative projects.
+Looking for a challenging and rewarding career? Explore our open positions and discover a world of opportunities at Shahazzo.
 @endpush
 
 <div>

@@ -9,7 +9,7 @@ class Slider extends Component
 {
     public $slider;
     public function mount(){
-        $this->slider = SliderModel::first();
+        $this->slider = SliderModel::first(); 
     }
     public function render()
     {

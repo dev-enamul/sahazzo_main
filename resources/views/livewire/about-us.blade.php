@@ -1,9 +1,9 @@
 @push('title') 
-    About
+    Shahazzo Software Solution - Best web development company in bangladesh
  @endpush 
 
 @push('description') 
-Discover the story behind MARS Planning and Engineering. Learn about our team, our values, and our commitment to delivering innovative and sustainable architectural design solutions. Get to know us and our passion for excellence in every project we undertake.
+    Shahazzo Software Solution specializes in best web development company in bangladesh. Our skilled team works closely with clients to deliver secure, user-friendly websites that enhance business growth.
 @endpush
 <div>
     <livewire:common.breadcrumb name="About Us"/>

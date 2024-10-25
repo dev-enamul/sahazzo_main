@@ -1,9 +1,9 @@
 @push('title') 
-    Architectural Insights | Explore Our Blog
+    Tech Talk: Latest Trends and Tips from Shahazzo
  @endpush 
 
 @push('description') 
-    Dive into the world of architecture with our insightful blog at MARS Planning and Engineering. From industry trends to design tips, our blog covers a wide range of topics to inspire and educate. Stay informed and discover new ideas for your architectural projects.
+Welcome to the Shahazzo Blog, where we share insights into the latest tech trends, web development tips, and digital marketing strategies. Stay updated with our expert analysis and practical advice.
 @endpush
 
 <div>

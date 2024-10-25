@@ -1,9 +1,9 @@
 @push('title') 
-    Our Projects | Explore Our Architectural Design Portfolio
+    Responsive Web Design: Elevate Your Online Presence with Shahazzo
  @endpush 
 
 @push('description') 
-    Explore a showcase of our architectural design projects at MARS Planning and Engineering. From residential homes to commercial complexes, dive into our diverse portfolio and discover the innovative solutions we've implemented. Get inspired for your next project with our successful endeavors.
+Looking for a responsive web development partner? Shahazzo provides custom website development services to help you achieve your digital goals. Our modern web development solutions are designed to impress.
 @endpush
 
 <div>
