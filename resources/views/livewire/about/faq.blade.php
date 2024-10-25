@@ -6,7 +6,7 @@
                     <h2 class="mb-0">
                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                             data-target="#collapse_{{$key}}" aria-expanded="true" aria-controls="collapse_{{$key}}">
-                            {{$key+1}}. {{$faq->question}}
+                            <b><i class="fa fa-circle" aria-hidden="true"></i>. {{$faq->question}}</b>
                         </button>
                     </h2>
                 </div>
