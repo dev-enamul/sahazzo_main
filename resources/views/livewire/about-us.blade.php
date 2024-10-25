@@ -25,7 +25,7 @@
         </section> 
         <livewire:about.mission-vission :data="$about"/>
       
-        <livewire:about.team />
+        {{-- <livewire:about.team /> --}}
         <livewire:about.counter />
 
 </div>
