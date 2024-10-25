@@ -1,5 +1,4 @@
-<div class="col-md-6">
-    <h4 class="color5">Three frequently asked questions</h4> 
+<div class="col-md-6"> 
         <div class="accordion mb-5" id="accordionExample"> 
             @foreach($faqs as $key => $faq)
             <div class="card">
