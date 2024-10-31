@@ -8,7 +8,7 @@
         <section class="home-promo home-promo-video">
             <div class="text-center wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <h2 class="titlepro">
-                    <span class="upper">Welcome to</span>
+                    <span class="upper">Are you Ready?</span>
                     
                     <span class="middle">
                         @php
