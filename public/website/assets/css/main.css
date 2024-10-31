@@ -1664,8 +1664,8 @@ ul.listicon-chevron-right li:before {
   height: auto;
   min-width: 100%;
   min-height: 100%;
-  opacity: 0.3;
-  -khtml-opacity: 0.3;
+  opacity: 0.1;
+  -khtml-opacity: 0.1;
   filter: alpha(opacity=30);
 }
 
@@ -1680,12 +1680,13 @@ ul.listicon-chevron-right li:before {
   margin: 0 auto;
 }
 .home-promo .titlepro {
-  font-size: 30px;
+  font-size: 20px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   margin-bottom: 40px;
   text-transform: uppercase;
   background: transparent;
   font-weight: 700;
+  color: #a4cd39;
 }
 .home-promo .titlepro span {
   display: block;
@@ -1693,7 +1694,7 @@ ul.listicon-chevron-right li:before {
 .home-promo .titlepro .middle {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 800;
   color: #EEF3F5;
 }
@@ -1704,6 +1705,7 @@ ul.listicon-chevron-right li:before {
   font-size: 20px;
   text-transform: lowercase;
   font-weight: 700;
+  color: #ddd;
 }
 
 .bg-slider > ul {
@@ -3699,6 +3701,7 @@ ul.children .comment {
   color: #fff;
 }
 
+
 .btn-transparent {
   border: solid 2px #fff;
   background: rgba(0, 0, 0, 0.05);
@@ -3709,6 +3712,10 @@ ul.children .comment {
   line-height: 50px;
   text-transform: uppercase;
   font-weight: normal;
+}
+.slider_btn{
+  background: #1b4163;
+  font-weight: bold;
 }
 .btn-transparent:hover, .btn-transparent:focus, .btn-transparent:active {
   border-color: #a4cd39;

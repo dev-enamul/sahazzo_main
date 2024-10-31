@@ -8,7 +8,7 @@
         <section class="home-promo home-promo-video">
             <div class="text-center wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <h2 class="titlepro">
-                    <span class="upper">Are you Ready?</span>
+                    <span class="upper">আপনি কি প্রস্তুত?</span>
                     
                     <span class="middle">
                         @php
@@ -21,7 +21,7 @@
                     </span>
                     <span class="bottom">{{$slider->slider_title}}</span>
                 </h2>
-                <a href="/contact" wire:navigate.hover class="btn btn-transparent"> Contact Us</a>
+                <a href="/contact" wire:navigate.hover class="btn btn-transparent slider_btn"> বিনামূল্যে পরামর্শ নিন </a>
             </div>
         </section>
     </div>
